@@ -1,0 +1,15 @@
+mixed-port: 7890
+allow-lan: false
+external-controller: 127.0.0.1:64914
+secret: 5b215d4b-d28c-4e63-8e73-d131587a7684
+
+proxies:
+  - {name: test, server: 10.5.80.147, port: 7890, type: http }
+
+
+rules:
+  - IP-CIDR,10.19.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,133.66.119.0/24,test
+  - IP-CIDR,133.64.240.0/24,test
+  - DOMAIN-KEYWORD,sntele,test
+  #- DOMAIN-KEYWORD,srdcloud,test
